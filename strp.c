@@ -75,7 +75,11 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle)
     assert(pcHaystack != NULL);
     assert(pcNeedle != NULL);
 
-    while (*pcHaystack != '\0') {
+   /* If needle is empty, return haystack */
+   if (*pcNeedle == '\0')
+      return (char *)pcHaystack;
+
+   while (*pcHaystack != '\0') {
         const char *pcH = pcHaystack;
         const char *pcN = pcNeedle;
         
