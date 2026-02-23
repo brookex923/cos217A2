@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
    {
       while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
          printf("%s", acLine);
-      fprintf(stderr, "0 replacements made\n");
+      fprintf(stderr, "0 replacements\n");
       return 0;
    }
 
@@ -100,6 +100,6 @@ int main(int argc, char *argv[])
       uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
 
 
-    fprintf(stderr, "%lu replacements made\n", (unsigned long)uReplaceCount);
+    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
 }
