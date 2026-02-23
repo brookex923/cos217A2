@@ -20,7 +20,37 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
-   /* Insert your code here. */
+   assert(pcLine != NULL);
+   assert(pcFrom != NULL);
+   assert(pcTo != NULL);
+
+   if (Str_getLength(pcFrom) == 0) {
+      printf("%s", pcLine);
+      return 0;
+   }
+
+   /* keep track of total number of replacements */
+   size_t uReplaceCount = 0;
+
+   const char *pcCurrent = pcLine;
+   const char *pcNextOccurrence;
+
+   /* use needle and haystack to find and replace occurrences */ 
+
+   while ((pcNextOccurrence = Str_search(pcCurrent, pcFrom)) != NULL) {
+      /* print the part of the line before the occurrence */
+      printf("%.*s", (int)(pcNextOccurrence - pcCurrent), pcCurrent);
+      /* print the replacement string */
+      printf("%s", pcTo);
+      /* update the current position to be after the occurrence */
+      pcCurrent = pcNextOccurrence + Str_getLength(pcFrom);
+      /* increment the replacement count */
+      uReplaceCount++;
+   }
+   /* print any remaining part of the line */
+   printf("%s", pcCurrent);
+
+   return uReplaceCount;
 }
 
 /*--------------------------------------------------------------------*/
@@ -55,8 +85,19 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
+   /* arg[1] is empty string scenario */
+   if (Str_getLength(pcFrom) == 0)
+   {
+      while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
+         printf("%s", acLine);
+      fprintf(stderr, "0 replacements\n");
+      return 0;
+   }
+
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
       /* Insert your code here. */
+      uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
+
 
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
