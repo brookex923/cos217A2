@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
    char acLine[MAX_LINE_SIZE];
    char *pcFrom;
    char *pcTo;
-   size_t uReplaceCount = 0;
+   size_t uReplaceCount;
 
    if (argc != PROPER_ARG_COUNT)
    {
@@ -90,15 +90,16 @@ int main(int argc, char *argv[])
    {
       while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
          printf("%s", acLine);
-      fprintf(stderr, "0 replacements\n");
+      fprintf(stderr, "0 replacements made\n");
       return 0;
    }
 
+   uReplaceCount = 0;
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
       /* Insert your code here. */
       uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
 
 
-   fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
+    fprintf(stderr, "%lu replacements made\n", (unsigned long)uReplaceCount);
    return 0;
 }
