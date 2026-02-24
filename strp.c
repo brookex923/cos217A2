@@ -2,9 +2,6 @@
 #include <stddef.h>
 #include "str.h"
 
-/* Return the number of characters in the input
-   string pcSrc, excluding the terminating null byte. 
-*/
 size_t Str_getLength(const char *pcSrc)
 {
    const char *pcEnd;

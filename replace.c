@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------*/
 /* replace.c                                                          */
-/* Author: ???                                                        */
+/* Author: Brooke Xu                                                  */
 /*--------------------------------------------------------------------*/
 
 #include "str.h"
@@ -88,16 +88,17 @@ int main(int argc, char *argv[])
    /* arg[1] is empty string scenario */
    if (Str_getLength(pcFrom) == 0)
    {
-      while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
+      while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
          printf("%s", acLine);
+      }
       fprintf(stderr, "0 replacements\n");
       return 0;
    }
 
    uReplaceCount = 0;
-   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-      /* Insert your code here. */
+   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
       uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
+   }
 
 
     fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);

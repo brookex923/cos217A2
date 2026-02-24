@@ -8,36 +8,28 @@
     of size_t */
 #include <stddef.h> 
 
-/* * Str_getLength returns the length of string pcSrc.
- * Behavior is equivalent to standard C function strlen.
- */
+/* Return the length of string pcSrc, 
+   not including the trailing '\0'.*/
 size_t Str_getLength(const char *pcSrc);
 
-/* * Str_copy copies the string pointed to by pcSrc (including 
- * the null byte) to the buffer pointed to by pcDest.
- * Behavior is equivalent to standard C function strcpy.
- */
+/* Copy string pcSrc (including the trailing '\0') 
+   to string pcDest. Return pcDest.  */
 char *Str_copy(char *pcDest, const char *pcSrc);
 
-/* * Str_concat appends the pcSrc string to the pcDest string, 
- * overwriting the terminating null byte at the end of pcDest, 
- * and then adds a terminating null byte.
- * Behavior is equivalent to standard C function strcat.
- */
+/* Append string pcSrc to end of string pcDest 
+   (overwriting pcDest's trailing '\0', then add 
+   a trailing '\0' to the updated pcDest. Return pcDest. */
 char *Str_concat(char *pcDest, const char *pcSrc);
 
-/* * Str_compare compares the two strings pcS1 and pcS2. 
- * It returns an integer less than, equal to, or greater than zero 
- * if pcS1 is found, respectively, to be less than, to match, 
- * or be greater than pcS2.
- * Behavior is equivalent to standard C function strcmp.
- */
+/* Compare strings pcS1 and pcS2. Return integer -1 if pcS1 is 
+   less than pcS2. Return 0 if pcS1 is equal to pcS2. 
+   Return integer 1 if pcS1 is greater than pcS2. */
 int Str_compare(const char *pcS1, const char *pcS2);
 
-/* * Str_search finds the first occurrence of the substring pcNeedle 
- * in the string pcHaystack. The terminating null bytes are not compared.
- * Behavior is equivalent to standard C function strstr.
- */
+/* Search for first occurrence of string pcNeedle in string 
+   pcHaystack. Terminating null bytes are not compared. Return 
+   pointer to where pcNeedle is found within pcHaystack, or 
+   NULL if not found. */
 char *Str_search(const char *pcHaystack, const char *pcNeedle);
 
 #endif

@@ -2,7 +2,6 @@
 #include <stddef.h>
 #include "str.h"
 
-
 size_t Str_getLength(const char pcSrc[])
 {
    size_t uLength = 0;
@@ -14,7 +13,7 @@ size_t Str_getLength(const char pcSrc[])
    return uLength;
 }
 
-char *Str_copy(char *pcDest, const char *pcSrc)
+char *Str_copy(char pcDest[], const char pcSrc[])
 {
    size_t uIndex = 0;
 
@@ -30,7 +29,7 @@ char *Str_copy(char *pcDest, const char *pcSrc)
    return pcDest;
 }
 
-char *Str_concat(char *pcDest, const char *pcSrc) 
+char *Str_concat(char pcDest[], const char pcSrc[]) 
 {
     size_t uIndex = 0;
     size_t uDestLength; 
@@ -48,7 +47,7 @@ char *Str_concat(char *pcDest, const char *pcSrc)
     return pcDest;
 }
 
-int Str_compare(const char *pcS1, const char *pcS2)
+int Str_compare(const char pcS1[], const char pcS2[])
 {
    size_t uIndex = 0;
 
@@ -71,7 +70,7 @@ int Str_compare(const char *pcS1, const char *pcS2)
       return 1;
 }
 
-char *Str_search(const char *pcHaystack, const char *pcNeedle)
+char *Str_search(const char pcHaystack[], const char pcNeedle[])
 {
    size_t uHayStackLength;
    size_t uNeedleLength;
