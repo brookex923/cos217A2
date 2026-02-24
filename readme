@@ -50,6 +50,8 @@ used AI in completing this assignment:
 I used AI to help me write and debug code for the stra.c and strp.c
 files. I also asked it to help generate some examples of str.h
 so that I could get a sense of what the general formatting is. 
+Then, I used AI to help me write the comments for my str.h file,
+and I edited them a bit afterwards as well. 
 I used AI to help me write my replaceAndWrite function, as well as
 debugging the replace.c file. Lastly, I used AI to help me understand
 the key concepts of this assignment. 
@@ -143,6 +145,16 @@ None
 Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
+
+No, this is not possible. In C, when a function is passed into an 
+array, it automatically decays into a pointer to the first element 
+of the array. This means that the function only knows the memory 
+address of the first element of the array, and it does not know
+the array length or how much memory is allocated for the array. 
+
+Thus, our assert functions can only verify that the pointer actually 
+points somewhere, but they cannot verify that the "somewhere" is big 
+enough.
 
 
 
