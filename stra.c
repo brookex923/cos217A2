@@ -11,9 +11,11 @@
 
 size_t Str_getLength(const char pcSrc[])
 {
-   size_t uLength = 0;
+   size_t uLength;
 
    assert(pcSrc != NULL);
+
+   uLength = 0;
 
    while (pcSrc[uLength] != '\0')
       uLength++;
@@ -22,10 +24,12 @@ size_t Str_getLength(const char pcSrc[])
 
 char *Str_copy(char pcDest[], const char pcSrc[])
 {
-   size_t uIndex = 0;
+   size_t uIndex;
 
    assert(pcDest != NULL);
    assert(pcSrc != NULL);
+
+   uIndex = 0;
 
    while (pcSrc[uIndex] != '\0')
    {
@@ -38,11 +42,13 @@ char *Str_copy(char pcDest[], const char pcSrc[])
 
 char *Str_concat(char pcDest[], const char pcSrc[]) 
 {
-    size_t uIndex = 0;
+    size_t uIndex;
     size_t uDestLength; 
     
     assert(pcDest != NULL);
     assert(pcSrc != NULL);
+
+    uIndex = 0;
     
     uDestLength = Str_getLength(pcDest);
 
@@ -56,10 +62,12 @@ char *Str_concat(char pcDest[], const char pcSrc[])
 
 int Str_compare(const char pcS1[], const char pcS2[])
 {
-   size_t uIndex = 0;
+   size_t uIndex;
 
    assert(pcS1 != NULL);
    assert(pcS2 != NULL);
+
+   uIndex = 0;
 
    while (pcS1[uIndex] != '\0' && pcS2[uIndex] != '\0')
    {
