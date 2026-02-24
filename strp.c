@@ -15,7 +15,7 @@ size_t Str_getLength(const char *pcSrc)
    assert(pcSrc != NULL);
 
    pcEnd = pcSrc;
-   
+
    while (*pcEnd != '\0')
       pcEnd++;
    return (size_t)(pcEnd - pcSrc);
@@ -84,6 +84,9 @@ int Str_compare(const char *pcS1, const char *pcS2)
 
 char *Str_search(const char *pcHaystack, const char *pcNeedle)
 {
+    const char *pcH;
+    const char *pcN;
+
     assert(pcHaystack != NULL);
     assert(pcNeedle != NULL);
 
@@ -92,8 +95,8 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle)
       return (char *)pcHaystack;
 
    while (*pcHaystack != '\0') {
-        const char *pcH = pcHaystack;
-        const char *pcN = pcNeedle;
+        pcH = pcHaystack;
+        pcN = pcNeedle;
         
         while (*pcH != '\0' && *pcN != '\0' && *pcH == *pcN) {
             pcH++;
