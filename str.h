@@ -1,3 +1,9 @@
+/*--------------------------------------------------------------------*/
+/* str.h                                                              */
+/* Author: Brooke Xu                                                  */
+/*                                                                    */
+/* The interface for a custom string manipulation library.            */
+/*--------------------------------------------------------------------*/
 
 /* check if we have already seen this file.
    if not, define it. */

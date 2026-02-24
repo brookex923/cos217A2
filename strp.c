@@ -1,3 +1,9 @@
+/*--------------------------------------------------------------------*/
+/* strp.c                                                             */
+/* Author: Brooke Xu                                                  */
+/*                                                                    */
+/* A pointer-based implementation of the custom string library.       */
+/*--------------------------------------------------------------------*/
 #include <assert.h>
 #include <stddef.h>
 #include "str.h"

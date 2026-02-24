@@ -1,3 +1,10 @@
+/*--------------------------------------------------------------------*/
+/* stra.c                                                             */
+/* Author: Brooke Xu                                                  */
+/*                                                                    */
+/* An array-based implementation of the custom string library.        */
+/*--------------------------------------------------------------------*/
+
 #include <assert.h>
 #include <stddef.h>
 #include "str.h"
