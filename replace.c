@@ -20,6 +20,12 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
+   /* variable to keep track of total number of replacements made */
+   size_t uReplaceCount = 0;
+   
+   const char *pcCurrent;
+   const char *pcNextOccurrence;
+
    assert(pcLine != NULL);
    assert(pcFrom != NULL);
    assert(pcTo != NULL);
@@ -29,11 +35,7 @@ static size_t replaceAndWrite(const char *pcLine,
       return 0;
    }
 
-   /* keep track of total number of replacements */
-   size_t uReplaceCount = 0;
-
-   const char *pcCurrent = pcLine;
-   const char *pcNextOccurrence;
+   pcCurrent = pcLine;
 
    /* use needle and haystack to find and replace occurrences */ 
 
